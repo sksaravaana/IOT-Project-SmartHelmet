@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Helmet Safety System</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://cdn.socket.io/4.5.4/socket.io.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+    <!-- Landing Page -->
+    <div id="landing-page" class="page active">
+        <div class="landing-container">
+            <!-- Hero Section -->
+            <div class="hero-section">
+                <div class="hero-content">
+                    <div class="logo-container">
+                        <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 19 L19 19 M12 19 L12 15 M8 15 L16 15 M8 15 L8 9 M16 15 L16 9 M8 9 L10 5 M16 9 L14 5 M10 5 L14 5"></path>
+                        </svg>
+                    </div>
+                    <h1 class="hero-title">Smart Helmet Safety System</h1>
+                    <p class="hero-subtitle">Smart Helmet Safety System</p>
+                    <p class="hero-description">
+                        Monitor helmet usage and alcohol detection in real-time with advanced IoT<br>
+                        technology. Ensure rider safety with automated ignition control.
+                    </p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" onclick="showLogin()">Start Your Journey</button>
+                        <button class="btn btn-secondary" onclick="showLogin()">Learn More</button>
+                    </div>
+                </div>
+                <div class="scroll-indicator">
+                    <div class="scroll-icon"></div>
+                </div>
+            </div>
+
+            <!-- Features Section -->
+            <div class="features-section">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Comprehensive Safety Features</h2>
+                        <p>Advanced IoT-based rider safety system with real-time monitoring</p>
+                    </div>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon bg-blue">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                                </svg>
+                            </div>
+                            <h3>Helmet Authentication</h3>
+                            <p>Real-time helmet detection with automatic ignition control. Bike won't start without helmet.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon bg-red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+                                    <line x1="12" y1="9" x2="12" y2="13"></line>
+                                    <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                                </svg>
+                            </div>
+                            <h3>Alcohol Detection</h3>
+                            <p>Advanced alcohol sensor prevents drunk driving by blocking ignition when alcohol is detected.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon bg-yellow">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M5 19 L19 19 M12 19 L12 15 M8 15 L16 15 M8 15 L8 9 M16 15 L16 9 M8 9 L10 5 M16 9 L14 5 M10 5 L14 5"></path>
+                                </svg>
+                            </div>
+                            <h3>Ignition Control</h3>
+                            <p>Smart ignition system with remote control capabilities and automated safety checks.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon bg-red">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path>
+                                    <path d="M13.73 21a2 2 0 0 1-3.46 0"></path>
+                                </svg>
+                            </div>
+                            <h3>Emergency Alerts</h3>
+                            <p>Instant notifications to emergency contacts with location tracking during accidents.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon bg-green">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <line x1="18" y1="20" x2="18" y2="10"></line>
+                                    <line x1="12" y1="20" x2="12" y2="4"></line>
+                                    <line x1="6" y1="20" x2="6" y2="14"></line>
+                                </svg>
+                            </div>
+                            <h3>Real-time Analytics</h3>
+                            <p>Comprehensive dashboard with ride statistics, violation tracking, and detailed reports.</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon bg-purple">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                                </svg>
+                            </div>
+                            <h3>Fleet Management</h3>
+                            <p>Multi-bike monitoring for rental companies with admin dashboard and user management.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA Section -->
+            <div class="cta-section">
+                <div class="container">
+                    <h2>Ready to Enhance Rider Safety?</h2>
+                    <p>Join the future of motorcycle safety with our IoT-enabled smart helmet system. Get real-time monitoring and automated safety controls.</p>
+                    <button class="btn btn-primary btn-large" onclick="showLogin()">Start Your Journey</button>
+                </div>
+            </div>
+
+            <!-- Footer -->
+            <footer class="footer">
+                <div class="container">
+                    <p>© 2025 Smart Helmet Safety System. All rights reserved.</p>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Login/Register Page -->
+    <div id="auth-page" class="page">
+        <div class="auth-container">
+            <div class="auth-header">
+                <div class="logo-container">
+                    <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                    <svg class="icon-large" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M5 19 L19 19 M12 19 L12 15 M8 15 L16 15 M8 15 L8 9 M16 15 L16 9 M8 9 L10 5 M16 9 L14 5 M10 5 L14 5"></path>
+                    </svg>
+                </div>
+                <h1>Smart Helmet Safety System</h1>
+                <p>Smart Helmet Safety System</p>
+            </div>
+
+            <div class="auth-card">
+                <div class="auth-title">
+                    <h2 id="auth-title-text">Welcome</h2>
+                    <p id="auth-subtitle-text">Sign in to access your safety dashboard</p>
+                </div>
+
+                <div class="tab-buttons">
+                    <button class="tab-btn active" id="signin-tab" onclick="switchAuthTab('signin')">Sign In</button>
+                    <button class="tab-btn" id="signup-tab" onclick="switchAuthTab('signup')">Sign Up</button>
+                </div>
+
+                <!-- Login Form -->
+                <form id="login-form" class="auth-form">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="login-username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="login-password" placeholder="••••••••" required>
+                    </div>
+                    <div id="login-error" class="error-message"></div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span id="login-btn-text">Sign In</span>
+                    </button>
+                </form>
+
+                <!-- Register Form -->
+                <form id="register-form" class="auth-form" style="display: none;">
+                    <div class="form-group">
+                        <label>Username</label>
+                        <input type="text" id="register-username" placeholder="Enter your username" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" id="register-password" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Confirm Password</label>
+                        <input type="password" id="register-confirm-password" placeholder="••••••••" required>
+                    </div>
+                    <div id="register-error" class="error-message"></div>
+                    <div id="register-success" class="success-message"></div>
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <span id="register-btn-text">Sign Up</span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Application -->
+    <div id="app-page" class="page">
+        <div class="app-container">
+            <!-- Sidebar -->
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <div class="logo-container-small">
+                        <svg class="icon-medium" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        </svg>
+                        <svg class="icon-medium" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 19 L19 19 M12 19 L12 15 M8 15 L16 15 M8 15 L8 9 M16 15 L16 9 M8 9 L10 5 M16 9 L14 5 M10 5 L14 5"></path>
+                        </svg>
+                    </div>
+                    <h2>Smart Helmet Safety System</h2>
+                    <p>Smart Helmet Safety System</p>
+                </div>
+
+                <nav class="sidebar-nav" id="sidebar-nav">
+                    <!-- Navigation items will be dynamically added -->
+                </nav>
+
+                <div class="sidebar-footer">
+                    <div class="user-info">
+                        <div class="user-label">Signed in as</div>
+                        <div class="user-name" id="user-name">User</div>
+                    </div>
+                    <button class="btn btn-outline btn-full" onclick="handleLogout()">
+                        <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
+                            <polyline points="16 17 21 12 16 7"></polyline>
+                            <line x1="21" y1="12" x2="9" y2="12"></line>
+                        </svg>
+                        <span>Sign Out</span>
+                    </button>
+                </div>
+            </aside>
+
+            <!-- Main Content -->
+            <main class="main-content">
+                <div class="content-wrapper" id="content-wrapper">
+                    <!-- Content will be dynamically loaded here -->
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner" style="display: none;">
+        <div class="spinner"></div>
+        <p>Loading...</p>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/socket.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/reports.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
